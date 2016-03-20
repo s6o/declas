@@ -1,4 +1,4 @@
-# declas - the declarative api server
+# declas - the declarative API server
 
 Describe an API with JSON and SQL, (re)start the server - thats it!
 
@@ -13,8 +13,9 @@ specified schema.
 
 The API schema will caputre:
 
-  * routes
+  * API versions
   * actions (verbs - CRUD i.e. POST, GET, PUT, DELETE)
+  * routes
   * query parameters as a JSON object, part of route pattern matching
   * request headers as a JSON object, part of route pattern matching
   * request body (POST, PUT) template/spec in JSON, part of route pattern matching

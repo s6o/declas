@@ -14,6 +14,7 @@ CREATE TABLE declas (
   schema_version TEXT PRIMARY KEY
   , http_port INTEGER DEFAULT 8001
   , https_port INTEGER DEFAULT 8443
+  , backend_database_driver TEXT NOT NULL -- e.g. postgres, sqlite
   , backend_database_user TEXT
   , backend_database_password TEXT
   , backend_database_host TEXT

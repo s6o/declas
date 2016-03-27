@@ -1,6 +1,7 @@
-INSERT INTO declas (schema_version, backend_database_name)
+INSERT INTO declas (schema_version, backend_database_driver, backend_database_name)
 VALUES (
   '0.0.1'
+  , 'sqlite'
   , 'declas-api.sqlite'
 );
 

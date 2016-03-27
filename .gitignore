@@ -1,5 +1,7 @@
 declas.config
 declas.creator
+declas.creator.user
 declas.files
 declas.includes
 *.swp
+.DS_Store

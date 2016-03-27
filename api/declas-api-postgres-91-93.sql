@@ -1,4 +1,16 @@
-INSERT INTO declas (schema_version) VALUES ('0.0.1');
+INSERT INTO declas
+(schema_version
+, backend_database_user
+, backend_database_host
+, backend_database_port
+, backend_database_name)
+VALUES
+('0.0.1'
+, 'postgres'
+, 'localhost'
+, 5432
+, 'declas_api'
+);
 
 INSERT INTO global_request_header (api_version, request_headers)
 VALUES (

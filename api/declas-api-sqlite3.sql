@@ -1,4 +1,8 @@
-INSERT INTO declas (schema_version) VALUES ('0.0.1');
+INSERT INTO declas (schema_version, backend_database_name)
+VALUES (
+  '0.0.1'
+  , 'declas-api.sqlite'
+);
 
 INSERT INTO global_request_header (api_version, request_headers)
 VALUES (

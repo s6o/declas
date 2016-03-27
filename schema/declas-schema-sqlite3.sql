@@ -1,6 +1,6 @@
 CREATE TABLE api (
   id INTEGER PRIMARY KEY
-  , created_ts_utc TEXT DEFAULT (strftime('%Y-%m-%d %H:%m:%S.%s', 'now', 'utc'))
+  , created_at_utc TEXT DEFAULT (strftime('%Y-%m-%d %H:%m:%S.%s', 'now', 'utc'))
   , version TEXT DEFAULT '*'                           -- API version e.g. 0.0.1 or *
   , action TEXT NOT NULL CHECK(action = lower(action)) -- delete, get, post, put
   , path TEXT NOT NULL CHECK(path = lower(path))       -- /api/<version>/path
@@ -12,18 +12,26 @@ CREATE TABLE api (
 
 CREATE TABLE declas (
   schema_version TEXT PRIMARY KEY
+  , http_port INTEGER DEFAULT 8001
+  , https_port INTEGER DEFAULT 8443
+  , backend_database_user TEXT
+  , backend_database_password TEXT
+  , backend_database_host TEXT
+  , backend_database_port INTEGER
+  , backend_database_name TEXT
+  , backend_database_properties TEXT
 );
 
 CREATE TABLE global_request_header (
   id INTEGER PRIMARY KEY
-  , created_ts_utc TEXT DEFAULT (strftime('%Y-%m-%d %H:%m:%S.%s', 'now', 'utc'))
+  , created_at_utc TEXT DEFAULT (strftime('%Y-%m-%d %H:%m:%S.%s', 'now', 'utc'))
   , api_version TEXT DEFAULT '*'
   , request_headers TEXT NOT NULL
 );
 
 CREATE TABLE global_response_header (
   id INTEGER PRIMARY KEY
-  , created_ts_utc TEXT DEFAULT (strftime('%Y-%m-%d %H:%m:%S.%s', 'now', 'utc'))
+  , created_at_utc TEXT DEFAULT (strftime('%Y-%m-%d %H:%m:%S.%s', 'now', 'utc'))
   , api_version TEXT DEFAULT '*'
   , response_headers TEXT NOT NULL
 );

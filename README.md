@@ -41,3 +41,6 @@ At present 2 suitable options exist:
   * [SQLite](http://sqlite.org/) - [JSON support](http://sqlite.org/json1.html)
   * [PostgreSQL](http://www.postgresql.org/) - [JSON support](http://www.postgresql.org/docs/9.5/interactive/functions-json.html)
 
+NOTE: skimming the respective documentations it looks like MySQL and MariaDB would
+also work, but author's experience with MySQL/MariaDB is limited, thus these are
+not first in line to be supported.

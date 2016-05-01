@@ -13,7 +13,8 @@ specified schema.
 
 The API schema will caputre:
 
-  * API versions
+  * services
+  * versions
   * actions (verbs - CRUD i.e. POST, GET, PUT, DELETE)
   * routes
   * query parameters as a JSON object, part of route pattern matching
@@ -21,6 +22,7 @@ The API schema will caputre:
   * request body (POST, PUT) template/spec in JSON, part of route pattern matching
   * response headers as a JSON object
   * (parameterized) response query (GET) or action query (POST, PUT, DELETE) in SQL
+  * backends
 
 ## API Server
 A declas API Server combines an HTTP server with an implementation of the declas

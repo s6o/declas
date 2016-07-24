@@ -1,50 +1,56 @@
-INSERT INTO backend
-( backend_name
-, database_driver
-, database_name
-)
-VALUES
-('declas-api-db'
-, 'sqlite'
-, 'declas-api.sqlite'
-);
-
 INSERT INTO declas
 ( schema_version
 )
 VALUES
-( '0.0.2'
+( '0.0.3'
+);
+
+INSERT INTO driver
+( driver_name
+) VALUES
+( 'postgres'
+),
+( 'sqlite'
+);
+
+INSERT INTO service
+( service_name
+, database_driver
+, database_name
+)
+VALUES
+( 'declas'
+, 'sqlite'
+, 'declas/declas-api.sqlite'
 );
 
 INSERT INTO global_request_header
-( api_version
+( service_name
 , request_headers
 )
 VALUES
-( '0.0.1'
+( 'declas'
 , '{"Accept":"application/json","Accept-Charset":"utf-8","Accept-Encoding":"gzip, deflate"}'
 );
 
 INSERT INTO global_response_header
-( api_version
+( service_name
 , response_headers
 )
 VALUES
-( '0.0.1'
+( 'declas'
 , '{"Content-Type":"application/json; charset=utf-8"}'
 );
 
 INSERT INTO api
-( version
-, action
+( action
+, service_name
 , path
-, response_query
-, backend_name
+, sql_query
 )
 VALUES
-( '0.0.1'
-, 'get'
-, '/schema-version'
+( 'get'
+, 'declas'
+, 'schema-version'
 , 'SELECT json_object(''schema_version'',schema_version) FROM declas;'
-, 'declas-api-db'
 );
